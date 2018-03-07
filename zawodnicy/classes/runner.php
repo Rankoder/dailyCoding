@@ -3,9 +3,9 @@ namespace classes\Runner;
 
 class Runner
 {
-    public function getRunner($runners, $idRunner):array
+    public function getRunner($runners, $idRunner) : array
     {
-        foreach($runners as $oneRunner) {       
+        foreach ($runners as $oneRunner) {       
             if ($oneRunner['id'] == $idRunner) {
                 return $oneRunner;
             }  
