@@ -12,6 +12,6 @@ $runner = Runner::getRunner($runners, 2);
 echo "Przed Biegiem <br>";
 print_r($runner);
 
-echo Route::getTime($runner);
+echo Route::getTime($runner, 1000);
 
 die('...');
