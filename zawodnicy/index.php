@@ -1,3 +1,7 @@
 <?php
+include './runners.php';
+include './runner.php';
 
-die('pierdol sie');
+ $runner = new Runner();
+ $runner->getRunner($runners);
+die('...');
