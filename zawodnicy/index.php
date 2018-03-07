@@ -12,6 +12,5 @@ print_r($runner);
 echo "<br>";
 echo "Czas Biegu: ";
 echo $championship->getTime($runner) . " sekund";
-
  
 die('...');
