@@ -1,16 +1,18 @@
 <?php
+use classes\Route\Route as Route;
+use classes\Runner\Runner as Runner;
+
+include './classes/runner.php';
+include './classes/route.php';
 include './runners.php';
-include './runner.php';
-include './route.php';
 
-$championship = new Route();
-$championship->showRunners($runners);
+Runner::showRunners($runners);
+$runner = Runner::getRunner($runners, 2);
 
-$runner = ($championship->getRunner($runners, 2));
 echo "Przed Biegiem <br>";
 print_r($runner);
 echo "<br>";
 echo "Czas Biegu: ";
-echo $championship->getTime($runner) . " sekund";
+echo Route::getTime($runner, 1000) . " sekund";
  
 die('...');

@@ -1,5 +1,7 @@
 <?php
-class Route extends Runner
+namespace classes\Route;
+
+class Route 
 {
     public function getTime($runner, $road = 2000):float
     {
