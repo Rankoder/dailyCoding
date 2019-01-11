@@ -1,11 +1,8 @@
 <?php
 
 function primeFactors($lastNumber) {
-    $array = [];
-    $str = null;
-    $startNumber = 2;
-    
-    for($primeNumber = $startNumber; $primeNumber <= $lastNumber; $primeNumber++) { 
+    $result = null;       
+    for($primeNumber = 2; $primeNumber <= $lastNumber; $primeNumber++) { 
         $counter = 0; 
         for($j=1;$j<=$primeNumber;$j++) { 
             if($primeNumber % $j == 0) { 
@@ -16,24 +13,27 @@ function primeFactors($lastNumber) {
         if($counter == 2) {
             while($lastNumber % $primeNumber == 0) {
                 $lastNumber /= $primeNumber;
-                $amount++;
-               
+                $amount++;               
             }
             if($amount > 0) {
                 if($amount > 1) {
-                    $str .= '('. $primeNumber. '**' . $amount . ')';
-                    $array[$primeNumber] = $amount;
+                    $result .= addStringWithPrimeNumberAndAmount($primeNumber, $amount);
+                    
                 } else {
-                    $str .= '(' .$primeNumber. ')';
+                    $result .= addStringWithPrimeNumber($primeNumber);
                 }
             };            
         } 
     }
-    return $str;
+    return $result;
 }
 
-function findFirstPrimeNumber($startNumber,$lastNumber) {
-    
-} 
+function addStringWithPrimeNumber($primeNumber) {
+    return '(' .$primeNumber. ')';
+}
 
-  //find prime numbers from 1-20
+function addStringWithPrimeNumberAndAmount($primeNumber, $amount) {
+    return '('. $primeNumber. '**' . $amount . ')';
+}
+
+
