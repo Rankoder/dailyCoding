@@ -5,7 +5,7 @@ function primeFactors($number) {
    $start = 2;
     while($start <= $number) {
         $counter = 0;
-        primeCheck($start);    
+          
         while ($number % $start === 0) {       
             $number /= $start; 
             $counter++;
@@ -16,15 +16,7 @@ function primeFactors($number) {
     return $string;
 }
 
-function primeCheck($divider){ 
-    if ($divider != 1) {    
-        for ($i = 2; $i <= $divider/2; $i++){ 
-            if ($divider % $i == 0) 
-                break; 
-        } 
-    return $divider; 
-    }
-} 
+
 
 function convertToString($counter, $prime) {
     if($counter === 1) {
@@ -33,4 +25,7 @@ function convertToString($counter, $prime) {
         return "(" . $prime . "**" . $counter . ")";
     }
 }
+
+$number = 86240;
+echo primeFactors($number);
 ?>
