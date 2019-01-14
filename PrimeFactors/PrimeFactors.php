@@ -1,39 +1,39 @@
 <?php
 
-function primeFactors($lastNumber) {
-    $result = null;       
-    for($primeNumber = 2; $primeNumber <= $lastNumber; $primeNumber++) { 
-        $counter = 0; 
-        for($j=1;$j<=$primeNumber;$j++) { 
-            if($primeNumber % $j == 0) { 
-                $counter++;
-                $amount = 0;
-            }
-        }
-        if($counter == 2) {
-            while($lastNumber % $primeNumber == 0) {
-                $lastNumber /= $primeNumber;
-                $amount++;               
-            }
-            if($amount > 0) {
-                if($amount > 1) {
-                    $result .= addStringWithPrimeNumberAndAmount($primeNumber, $amount);
-                    
-                } else {
-                    $result .= addStringWithPrimeNumber($primeNumber);
-                }
-            };            
+function primeFactors($number) {
+    divideNumberByPrime(2, $number);
+}
+
+function divideNumberByPrime($start, $number) {
+    $string = null;
+    while($start <= $number) {
+        $counter = 0;
+        primeCheck($start);    
+        while ($number % $start === 0) {       
+            $number /= $start; 
+            $counter++;
         } 
+        $string .= convertToString($counter, $start);    
+        $start++;
     }
-    return $result;
+    return $string;
 }
 
-function addStringWithPrimeNumber($primeNumber) {
-    return '(' .$primeNumber. ')';
+function primeCheck($divider){ 
+    if ($divider != 1) {    
+        for ($i = 2; $i <= $divider/2; $i++){ 
+            if ($divider % $i == 0) 
+                break; 
+        } 
+    return $divider; 
+    }
+} 
+
+function convertToString($counter, $prime) {
+    if($counter === 1) {
+        return "(" . $prime . ")";
+    } elseif($counter > 1) {
+        return "(" . $prime . "**" . $counter . ")";
+    }
 }
-
-function addStringWithPrimeNumberAndAmount($primeNumber, $amount) {
-    return '('. $primeNumber. '**' . $amount . ')';
-}
-
-
+?>
