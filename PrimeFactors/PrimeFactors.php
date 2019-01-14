@@ -1,11 +1,8 @@
 <?php
 
 function primeFactors($number) {
-    divideNumberByPrime(2, $number);
-}
-
-function divideNumberByPrime($start, $number) {
-    $string = null;
+   $string = null;
+   $start = 2;
     while($start <= $number) {
         $counter = 0;
         primeCheck($start);    
