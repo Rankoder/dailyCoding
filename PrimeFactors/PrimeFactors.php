@@ -4,8 +4,7 @@ function primeFactors($number) {
    $string = null;
    $start = 2;
     while($start <= $number) {
-        $counter = 0;
-          
+        $counter = 0;          
         while ($number % $start === 0) {       
             $number /= $start; 
             $counter++;
@@ -15,8 +14,6 @@ function primeFactors($number) {
     }
     return $string;
 }
-
-
 
 function convertToString($counter, $prime) {
     if($counter === 1) {
