@@ -3,8 +3,7 @@ include "./PrimeFactors.php";
 
 use PHPUnit\Framework\TestCase;
 
-class PrimeFactorsTestCases extends TestCase
-{
+class PrimeFactorsTestCases extends TestCase {
     private function revTest($actual, $expected) {
         $this->assertEquals($expected, $actual);
     }
