@@ -4,12 +4,10 @@ include "./inArray.php";
 use PHPUnit\Framework\TestCase;
 
 class inArrayTest extends TestCase {
-    private function revTest($actual, $expected) 
-    {
+    private function revTest($actual, $expected) {
         $this->assertEquals($expected, $actual);
     }
-    public function testBasics() 
-    {
+    public function testBasics() {
         $a2 = ["lively", "alive", "harp", "sharp", "armstrong"];
         $a1 = ["arp", "live", "strong"];
         $this->revTest(inArray($a1, $a2), ["arp", "live", "strong"]);
