@@ -1,5 +1,5 @@
 <?php
-include "../CaesarCipher.php";
+include "./CaesarCipher.php";
 
 use PHPUnit\Framework\TestCase;
 
