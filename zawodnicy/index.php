@@ -7,7 +7,7 @@ include './classes/route.php';
 include './runners.php';
 
 Runner::showRunners($runners);
-$runner = Runner::getRunner($runners, 2);
+$runner = Runner::getRunner($runners, 3);
 
 echo "Przed Biegiem <br>";
 print_r($runner);

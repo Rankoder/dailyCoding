@@ -11,7 +11,6 @@ class Route {
                $runner['condition']--;
                $runner['maxSpeed'] -= $runner['speedDecrise'];             
             }
-            
             $time += 60;
         }  
         
